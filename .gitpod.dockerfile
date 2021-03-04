@@ -26,8 +26,9 @@ RUN sudo apt-get update \
 #    && apt-get update  
 
 
-
-
+#install mbed
+RUN python3 -m pip install mbed-cli
+# mbed config -G ARM_PATH "C:\Program Files\ARM"
 
 
 
