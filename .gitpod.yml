@@ -74,7 +74,7 @@ tasks:
               
       
               
-              
+              bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"  &&
            
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
