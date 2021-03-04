@@ -57,7 +57,7 @@ tasks:
               
                             
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&
-              pip3 install --user west                                                                                      && 
+              pip3 install west                                                                                             && 
               west init -l                                                                                                  &&
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                              &&
               git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
