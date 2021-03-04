@@ -16,8 +16,9 @@ USER root
 # Install Eclipse deps
 RUN sudo apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential \
-       gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
-    && apt-get update    
+    && apt-get update   
+     #  gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
+ 
 
 
 
@@ -51,7 +52,7 @@ RUN python3 -m pip install mbed-cli
 #https://apt.llvm.org/
 #wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
 
-RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+#RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
     
 # Get gcc-arm-embedded key
 #RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B4D03348F75E3362B1E1C2A1D1FAA6ECF64D33B0
