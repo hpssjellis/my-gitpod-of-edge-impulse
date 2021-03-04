@@ -10,15 +10,29 @@ FROM gitpod/workspace-full:latest
 
 USER root
 
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
+#RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
 
 
 # Install Eclipse deps
 RUN sudo apt-get update \
-    && sudo apt-get install -y --no-install-recommends \
+    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends \
        make build-essential clang-12 lldb-12 lld-12  libllvm-12-ocaml-dev libllvm12 \
        llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime libc++-12-dev libc++abi-12-dev     \
     && apt-get update    
+
+
+#RUN apt-get update                                                                                        \
+#    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dbus gcc g++ automake    \
+#               libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev    \                                     
+#               autoconf autoconf-archive  software-properties-common bsdtar                \
+#    && apt-get update  
+
+
+
+
+
+
+
 
 #remove:   default-jre  libxtst-dev
 
