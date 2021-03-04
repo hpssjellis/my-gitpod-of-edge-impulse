@@ -25,10 +25,17 @@ tasks:
               echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
  
 
+              cd /home/linuxbrew/.linuxbrew                                                                                  &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
+              
+              
                            
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
+                           
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nano33bleSense                       &&
+              chmod +x a01-nano.sh                                                                                           &&
               
               
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                                     &&
@@ -50,15 +57,11 @@ tasks:
 
                          
               
-              cd /home/linuxbrew/.linuxbrew                                                                                  &&
-              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
               
               
               
                             
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&
-              pip3 install west                                                                                             && 
-              west init -l                                                                                                  &&
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                              &&
               git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
               mv a01-nordic-nrf5280.sh   nordic-compile/                                                                    &&
