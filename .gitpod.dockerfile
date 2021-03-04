@@ -16,7 +16,7 @@ USER root
 # Install Eclipse deps
 RUN sudo apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential \
-       gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev    
+       gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
     && apt-get update    
 
 
