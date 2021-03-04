@@ -1,0 +1,70 @@
+image:
+  file: .gitpod.dockerfile
+  context: apache
+ports:
+- port: 8080
+  onOpen: open-preview
+tasks:
+- name: Terminal
+  command: >
+    echo "";
+    echo "Commands you can try:";
+    echo " * apachectl stop";
+    echo " * apachectl start";
+    echo " * gp open /var/log/apache2/access.log";
+    echo " * gp open /var/log/apache2/error.log";
+- name: Apache
+  command: >
+    apachectl start &&
+    multitail /var/log/apache2/access.log -I /var/log/apache2/error.log
+- name: myInstalls
+  command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
+              touch /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt                                             &&
+       
+
+              echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
+ 
+
+                    
+                            
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/siliconLabs                                             &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-silabs-tb-sense-2.git   silicon-labs-compile    &&     
+              mv a01-siliconLabs.sh   silicon-labs-compile/                                                                           &&
+              cd silicon-labs-compile                                                                                                 &&
+              mkdir ei-workspace                                                                                                      &&
+              chmod +x a01-siliconLabs.sh                                                                                             &&
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse                                                                                 &&
+              pip3 install --user west                                                                                      && 
+              west init -l                                                                                                  &&
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                                        &&
+              git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
+              mv a01-nordic-nrf5280.sh   nordic-compile/                                                                    &&
+              mv a02-nordic-nrf5340.sh   nordic-compile/                                                                    &&
+              cd nordic-compile                                                                                             &&
+              chmod +x a01-nordic-nrf5280.sh                                                                                &&
+              chmod +x a02-nordic-nrf5340.sh                                                                                &&
+              
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                                       &&
+              chmod +x a00-get-lora-example.sh                                                                               &&
+              chmod +x a01-portenta.sh                                                                                       &&
+              
+                         
+              
+              cd /home/linuxbrew/.linuxbrew                                                                                  &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                                     &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-ecm3532.git    eta-compile             &&         
+              mv a01-eta.sh eta-compile/                                                                                     &&         
+              cd eta-compile                                                                                                 &&         
+              chmod +x a01-eta.sh                                                                                            &&
+              
+              
+           
+
+              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
