@@ -15,8 +15,7 @@ USER root
 
 # Install Eclipse deps
 RUN sudo apt-get update \
-    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential      \                                                                             \
-    && apt-get install -y --no-install-recommends  gcc-arm-none-eabi gdb-arm-none-eabi                  \
+    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential      \    
     && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"                                              \
     && curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz    \
     && sudo dpkg --add-architecture i386                                                                \
