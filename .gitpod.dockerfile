@@ -84,10 +84,10 @@ USER gitpod
 #install mbed
 #RUN python3 -m pip install mbed-cli
 
-RUN cd /home/linuxbrew/.linuxbrew                                                                 \
-    && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh    \
-    && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"   \
-    && python3 -m pip install mbed-cli         
+#RUN cd /home/linuxbrew/.linuxbrew                                                                 \
+#    && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh    \
+#    && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"   \
+#    && python3 -m pip install mbed-cli         
               
 
   
