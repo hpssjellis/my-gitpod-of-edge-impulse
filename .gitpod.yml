@@ -1,7 +1,23 @@
 image:
   file: .gitpod.dockerfile
-
+  context: apache
+ports:
+- port: 8080
+  onOpen: open-preview
 tasks:
+- name: Terminal
+  command: >
+    echo "";
+    echo "Commands you can try:";
+    echo " * apachectl stop";
+    echo " * apachectl start";
+    echo " * gp open /var/log/apache2/access.log";
+    echo " * gp open /var/log/apache2/error.log";
+- name: Apache
+  command: >
+    apachectl start &&
+    multitail /var/log/apache2/access.log -I /var/log/apache2/error.log
+- name: myInstalls
   command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
               touch /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt                                             &&
        
@@ -9,17 +25,13 @@ tasks:
               echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
  
 
-   
                            
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
-                           
-              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nano33bleSense                       &&
-              chmod +x a01-nano.sh                                                                                           &&
               
               
-              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                           &&
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                                     &&
               git clone https://github.com/edgeimpulse/example-standalone-inferencing-ecm3532.git    eta-compile             &&         
               mv a01-eta.sh eta-compile/                                                                                     &&         
               cd eta-compile                                                                                                 &&         
@@ -38,11 +50,15 @@ tasks:
 
                          
               
+              cd /home/linuxbrew/.linuxbrew                                                                                  &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
               
               
               
                             
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&
+              pip3 install west                                                                                             && 
+              west init -l                                                                                                  &&
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                              &&
               git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
               mv a01-nordic-nrf5280.sh   nordic-compile/                                                                    &&
@@ -55,7 +71,7 @@ tasks:
               
       
               
-              #bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"  &&
+              
            
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
