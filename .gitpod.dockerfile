@@ -44,10 +44,10 @@ RUN sudo apt-get update \
 
 
 #install mbed
-RUN python3 -m pip install mbed-cli
+#RUN python3 -m pip install mbed-cli
 # mbed config -G ARM_PATH "C:\Program Files\ARM"
 
-RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+#RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 
 
 #remove:   default-jre  libxtst-dev
