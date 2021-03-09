@@ -16,10 +16,16 @@ USER root
 # Install Eclipse deps
 RUN sudo apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential \
-    && llvm-10 lldb-10 llvm-10-dev libllvm10 llvm-10-runtime                                      \
+       llvm-10 lldb-10 llvm-10-dev libllvm10 llvm-10-runtime                                      \
     && apt-get update   
      #  gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
  
+
+
+#wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+#sudo apt-get update
+#sudo apt-get install clang-9 libclang-9-dev llvm-9-dev
+
 
 #RUN curl -o /var/lib/apt/dazzle-marks/llvm.gpg -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key \
 #    && apt-key add /var/lib/apt/dazzle-marks/llvm.gpg \
