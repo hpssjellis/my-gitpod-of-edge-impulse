@@ -16,7 +16,7 @@ USER root
 # Install Eclipse deps
 RUN sudo apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential \
-       llvm-10 lldb-10 llvm-10-dev libllvm10 llvm-10-runtime  gcc make                            \
+       llvm-10 lldb-10 llvm-10-dev libllvm10 llvm-10-runtime   gcc-arm-none-eabi             \
     && apt-get update   
      #  gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
  
