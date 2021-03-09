@@ -31,7 +31,7 @@ tasks:
               chmod +x a01-portenta.sh                                                                                       &&
               
               
-              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                                     &&
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                           &&
               git clone https://github.com/edgeimpulse/example-standalone-inferencing-ecm3532.git    eta-compile             &&         
               mv a01-eta.sh eta-compile/                                                                                     &&         
               cd eta-compile                                                                                                 &&         
@@ -50,15 +50,11 @@ tasks:
 
                          
               
-              cd /home/linuxbrew/.linuxbrew                                                                                  &&
-              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
               
               
               
                             
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&
-              pip3 install west                                                                                             && 
-              west init -l                                                                                                  &&
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                              &&
               git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
               mv a01-nordic-nrf5280.sh   nordic-compile/                                                                    &&
@@ -68,9 +64,10 @@ tasks:
               chmod +x a02-nordic-nrf5340.sh                                                                                &&
               
               
-              
-      
-              
+              cd /home/linuxbrew/.linuxbrew                                                                                 &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
+              python3 -m pip install mbed-cli  west                                                                         &&
+
               
            
 
