@@ -47,7 +47,7 @@ RUN sudo apt-get update \
 #RUN python3 -m pip install mbed-cli
 # mbed config -G ARM_PATH "C:\Program Files\ARM"
 
-#RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 
 
 #remove:   default-jre  libxtst-dev
@@ -79,6 +79,15 @@ RUN sudo apt-get update \
 
 
 USER gitpod
+
+#install mbed
+RUN python3 -m pip install mbed-cli
+
+RUN cd /home/linuxbrew/.linuxbrew                                                                                  &&
+    && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
+              
+              
+
   
 RUN mkdir -p /home/gitpod/logs                                                                            \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
