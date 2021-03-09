@@ -25,10 +25,7 @@ tasks:
               echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
  
 
-              cd /home/linuxbrew/.linuxbrew                                                                                  &&
-              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                        &&
-              
-              
+   
                            
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
               chmod +x a00-get-lora-example.sh                                                                               &&
