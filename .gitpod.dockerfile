@@ -15,12 +15,30 @@ USER root
 
 # Install Eclipse deps
 RUN sudo apt-get update \
-    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi gcc make g++   \    
-    && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"                                              \
-    && curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz    \
-    && sudo dpkg --add-architecture i386                                                                \
+    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi make   \                                                                \
+    && apt-get update  
+
+
+RUN curl -o /var/lib/apt/dazzle-marks/llvm.gpg -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key \
+    && apt-key add /var/lib/apt/dazzle-marks/llvm.gpg \
+    && echo "deb https://apt.llvm.org/focal/ llvm-toolchain-focal main" >> /etc/apt/sources.list.d/llvm.list \
+    && install-packages \
+        clang \
+        clangd \
+        clang-format \
+        clang-tidy \
+        gdb \
+        lld \
     && apt-get update  
     
+    
+    
+ 
+  
+  #  && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"                                              \
+  #  && curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz    \  
+   #  && sudo dpkg --add-architecture i386    
+  
 #ENV PATH="/usr/bin/cmake/bin:${PATH}"    
     
      #  gcc g++ automake libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev  \   
