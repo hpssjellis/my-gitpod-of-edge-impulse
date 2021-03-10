@@ -16,7 +16,7 @@ USER root
 # Install Eclipse deps
 RUN sudo apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi make   \                                                                \
-    && apt-get update  
+    && sudo apt-get update  
 
 
 RUN curl -o /var/lib/apt/dazzle-marks/llvm.gpg -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key \
@@ -29,7 +29,7 @@ RUN curl -o /var/lib/apt/dazzle-marks/llvm.gpg -fsSL https://apt.llvm.org/llvm-s
         clang-tidy \
         gdb \
         lld \
-    && apt-get update  
+    && sudo apt-get update  
     
     
     
