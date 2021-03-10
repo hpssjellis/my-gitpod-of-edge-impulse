@@ -69,7 +69,8 @@ tasks:
               curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
               python3 -m pip install mbed-cli  west                                                                         &&
               
-              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build.sh           &&
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                            &&
+              ./arduino-build.sh                                                                                            &&
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&                                                                                
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
