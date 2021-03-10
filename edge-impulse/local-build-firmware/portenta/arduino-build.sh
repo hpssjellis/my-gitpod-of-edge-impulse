@@ -38,7 +38,7 @@ HAS_ARDUINO_CORE="$(has_arduino_core)"
 if [ -z "$HAS_ARDUINO_CORE" ]; then
     echo "Installing Arduino Mbed core..."
     $ARDUINO_CLI core update-index
-    $ARDUINO_CLI core install arduino:mbed@1.3.1
+    $ARDUINO_CLI core install arduino:mbed@1.3.2
     echo "Installing Arduino Mbed core OK"
 fi
 
