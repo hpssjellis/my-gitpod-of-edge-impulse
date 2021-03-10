@@ -1,6 +1,5 @@
 FROM gitpod/workspace-full:latest
 
-
 USER root
 
 RUN apt-get update \
@@ -17,7 +16,6 @@ RUN apt-get update \
 
 
 USER gitpod
-
   
 RUN mkdir -p /home/gitpod/logs                                                                            \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
