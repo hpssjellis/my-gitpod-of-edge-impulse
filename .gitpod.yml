@@ -5,7 +5,7 @@ ports:
 - port: 8080
 
 tasks:
-  command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
+- command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
               touch /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt                                             &&
        
 
