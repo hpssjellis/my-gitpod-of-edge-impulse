@@ -17,6 +17,7 @@ tasks:
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
               chmod +x arduino-build.sh                                                                                      &&
+              cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&
               
               
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                           &&
@@ -44,10 +45,10 @@ tasks:
               chmod +x a02-nordic-nrf5340.sh                                                                                &&
               
               
-              cd /home/gitpod                                                                                               &&
+              cd /home/linuxbrew/.linuxbrew                                                                                 &&
               curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
               python3 -m pip install mbed-cli  west                                                                         &&
-              ./workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build.sh             &&
+              ./arduino-build.sh                                                                                            &&
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                       &&                                                                                
 
