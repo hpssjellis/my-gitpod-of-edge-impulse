@@ -11,9 +11,18 @@ tasks:
 
               echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
  
+                           
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c++                                  &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing.git                                    &&
+              chmod +x a01-cpp.sh                                                                                            &&
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c                                    &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-c.git                                  &&
+              chmod +x a01-c.sh                                                                                              &&
 
                            
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
+              git clone https://github.com/edgeimpulse/example-portenta-lorawan.git                                          &&
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
               chmod +x arduino-build.sh                                                                                      &&
