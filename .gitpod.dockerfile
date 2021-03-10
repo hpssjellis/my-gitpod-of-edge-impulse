@@ -13,8 +13,8 @@ USER root
 #RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
 
 
-# Install Eclipse deps
-RUN sudo apt-get update \
+
+RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi make                                                                  \
 
 
