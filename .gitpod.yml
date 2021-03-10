@@ -72,7 +72,7 @@ tasks:
               
               
               
-              cd /workspace/my-gitpod-of-edge-impulse/                                                                      &&                                                                                &&
+              cd /workspace/my-gitpod-of-edge-impulse                                                                       &&                                                                                &&
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
               
