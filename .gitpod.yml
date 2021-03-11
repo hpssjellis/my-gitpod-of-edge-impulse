@@ -59,7 +59,17 @@ tasks:
               python3 -m pip install mbed-cli  west                                                                         &&
               ./arduino-build.sh                                                                                            &&
               
-              cd /workspace/my-gitpod-of-edge-impulse                                                                       &&                                                                                
+              
+                                         
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/mbed                                  &&
+              mbed import https://github.com/edgeimpulse/example-standalone-inferencing-mbed                                  &&
+              mv a01-mbed-build.sh   example-standalone-inferencing-mbed/                                                     &&
+              cd example-standalone-inferencing-mbed                                                                          &&
+              chmod +x a01-mbed-build.sh                                                                                      &&
+              
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse                                                                         &&                                                                                
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
               
