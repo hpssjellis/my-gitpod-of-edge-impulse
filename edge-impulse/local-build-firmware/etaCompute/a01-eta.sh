@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 echo "Upload your edge impulse deployed without EON compiler C++ zipped library to this directory and rename it as edge.zip"
