@@ -1,6 +1,10 @@
 
 #!/bin/bash
 
+echo "Note: simplicity studio can be loaded with the following command but will probably not install"
+echo "curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz"
+echo ""
+
 echo "Upload your edge impulse deployed without EON compiler C++ zipped library to this directory and rename it as edge.zip"
 echo "Good idea to duplicate this folder so you can easily upload a different program."
 echo "enter to contrinue, ctrl-C to quit"
