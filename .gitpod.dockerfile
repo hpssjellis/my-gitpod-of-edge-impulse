@@ -3,7 +3,7 @@ FROM gitpod/workspace-full:latest
 USER root
 
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi make \
+    && DEBIAN_FRONTEND=noninteractive  apt-get install -y --no-install-recommends build-essential gcc-arm-none-eabi make  \
     && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" \
         && install-packages \
         clang \
@@ -12,11 +12,8 @@ RUN apt-get update \
         clang-tidy \
         gdb \
         lld  \
-    && dpkg --add-architecture i386    \
     && apt-get update \
-    && curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz   \
-    &&  cd SimplicityStudio_v4 \
-    &&  ./setup.sh 
+
 
 
 USER gitpod
