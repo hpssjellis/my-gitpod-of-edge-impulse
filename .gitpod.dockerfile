@@ -13,6 +13,9 @@ RUN apt-get update \
         gdb \
         lld  \
     && dpkg --add-architecture i386    \
+    && curl -SL http://www.silabs.com/Support%20Documents/Software/SimplicityStudio-v4.tgz | tar -xz   \
+    &&  cd SimplicityStudio_v4 \
+    &&  ./setup.sh \
     && apt-get update 
 
 
