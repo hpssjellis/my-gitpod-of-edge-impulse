@@ -12,6 +12,7 @@ RUN apt-get update \
         clang-tidy \
         gdb \
         lld  \
+    && dpkg --add-architecture i386    
     && apt-get update 
 
 
