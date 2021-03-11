@@ -12,7 +12,7 @@ RUN apt-get update \
         clang-tidy \
         gdb \
         lld  \
-    && apt-get update \
+    && apt-get update 
 
 
 
