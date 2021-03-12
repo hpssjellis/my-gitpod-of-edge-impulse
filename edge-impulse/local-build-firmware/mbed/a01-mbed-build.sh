@@ -1,9 +1,8 @@
 #!/bin/bash
 
 
-mbed import https://github.com/edgeimpulse/example-standalone-inferencing-mbed
+#mbed import https://github.com/edgeimpulse/example-standalone-inferencing-mbed
 
 echo "build and flash with "
-echo "mbed compile -t GCC_ARM -m auto -f"
-echo "not sure how to just build it"
+echo "mbed compile -t GCC_ARM -m auto "
 
