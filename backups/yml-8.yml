@@ -1,0 +1,81 @@
+image:
+  file: .gitpod.dockerfile
+
+ports:
+- port: 8080
+
+tasks:
+- command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
+              touch /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt                                             &&
+       
+
+              echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
+ 
+                           
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c++                                  &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing.git                                    &&
+              chmod +x a01-cpp.sh                                                                                            &&
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c                                    &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-c.git                                  &&
+              chmod +x a01-c.sh                                                                                              &&
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nano33bleSense                       &&
+              chmod +x a01-nano.sh                                                                                           &&
+              chmod +x arduino-build.sh                                                                                      &&
+
+                           
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
+              git clone https://github.com/edgeimpulse/example-portenta-lorawan.git                                          &&
+              chmod +x a00-get-lora-example.sh                                                                               &&
+              chmod +x a01-portenta.sh                                                                                       &&
+              chmod +x arduino-build.sh                                                                                      &&
+              cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                           &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-ecm3532.git    eta-compile             &&         
+              mv a01-eta.sh eta-compile/                                                                                     &&         
+              cd eta-compile                                                                                                 &&         
+              chmod +x a01-eta.sh                                                                                            &&   
+                            
+                            
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/siliconLabs                                   &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-silabs-tb-sense-2.git   silicon-labs-compile    &&     
+              mv a01-siliconLabs.sh   silicon-labs-compile/                                                                           &&
+              cd silicon-labs-compile                                                                                                 &&
+              mkdir ei-workspace                                                                                                      &&
+              chmod +x a01-siliconLabs.sh                                                                                             &&
+                        
+                            
+              cd /workspace/my-gitpod-of-edge-impulse                                                                       &&
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nordic                              &&
+              git clone https://github.com/edgeimpulse/firmware-nrf52840-5340-dk   nordic-compile                           &&     
+              mv a01-nordic-nrf5280.sh   nordic-compile/                                                                    &&
+              mv a02-nordic-nrf5340.sh   nordic-compile/                                                                    &&
+              cd nordic-compile                                                                                             &&
+              chmod +x a01-nordic-nrf5280.sh                                                                                &&
+              chmod +x a02-nordic-nrf5340.sh                                                                                &&
+              
+              
+              cd /home/linuxbrew/.linuxbrew                                                                                 &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
+              python3 -m pip install mbed-cli  west                                                                         &&
+              ./arduino-build.sh                                                                                            &&
+              
+              
+                                         
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/mbed                                  &&
+              mbed import https://github.com/edgeimpulse/example-standalone-inferencing-mbed                                  &&
+              mv a01-mbed-build.sh   example-standalone-inferencing-mbed/                                                     &&
+              cd example-standalone-inferencing-mbed                                                                          &&
+              chmod +x a01-mbed-build.sh                                                                                      &&
+              
+              
+              
+              cd /workspace/my-gitpod-of-edge-impulse                                                                         &&                                                                                
+
+              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
+              
+              
+     
