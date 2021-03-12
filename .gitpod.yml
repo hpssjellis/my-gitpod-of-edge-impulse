@@ -19,6 +19,10 @@ tasks:
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c                                    &&
               git clone https://github.com/edgeimpulse/example-standalone-inferencing-c.git                                  &&
               chmod +x a01-c.sh                                                                                              &&
+              
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nano33bleSense                       &&
+              chmod +x a01-nano.sh                                                                                           &&
+              chmod +x arduino-build.sh                                                                                      &&
 
                            
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
