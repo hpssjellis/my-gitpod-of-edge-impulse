@@ -29,4 +29,3 @@ echo "Download the full folder eta-edge-serial-upload so that you can install th
 echo "Edge impulse client needs to be installed on your local machine"
 echo "npm install -g edge-impulse-cli"
 
-
