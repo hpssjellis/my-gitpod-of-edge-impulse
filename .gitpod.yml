@@ -60,7 +60,7 @@ tasks:
               
               cd /home/linuxbrew/.linuxbrew                                                                                 &&
               curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
-              python3 -m pip install mbed-cli  west                                                                         &&
+              python3 -m pip install mbed-cli  west  pyserial==3.4 inquirer==2.7.0                                          &&
               ./arduino-build.sh                                                                                            &&
               
               
