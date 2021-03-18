@@ -1,3 +1,10 @@
+
+Note: Your edge impulse is unzipped in the folder
+```
+--> eta-compile-->third-party-->edgeImpulse 
+```
+
+
 For ETA Snsor
 ```
 cd Applications/edge-impulse-standalone
