@@ -2,6 +2,11 @@
 my gitpod of edge impulse
 
 
+
+# Note: Only maintaining the Arduino section, specifically for the Portenta Pro Family of boards and shields
+
+The other sections work with varying levels of success.
+
 Make this most uptodate Gitpod by clicking the follwoing link (Need a Github login)
 ## https://gitpod.io/#github.com/hpssjellis/my-gitpod-of-edge-impulse
 
