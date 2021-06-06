@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-PROJECT=firmware-arduino-portenta
-BOARD=arduino:mbed:envie_m7
+PROJECT=firmware-arduino-nano-33-ble-sense
+BOARD=arduino:mbed:nano33ble
 COMMAND=$1
 if [ -z "$ARDUINO_CLI" ]; then
 	ARDUINO_CLI=$(which arduino-cli || true)
@@ -38,19 +38,19 @@ HAS_ARDUINO_CORE="$(has_arduino_core)"
 if [ -z "$HAS_ARDUINO_CORE" ]; then
     echo "Installing Arduino Mbed core..."
     $ARDUINO_CLI core update-index
-    $ARDUINO_CLI core install arduino:mbed@2.1.0
+    $ARDUINO_CLI core install arduino:mbed@1.1.6
     echo "Installing Arduino Mbed core OK"
 fi
 
-has_mkrwan_lib() {
-	$ARDUINO_CLI lib list | grep MKRWAN || true
+has_lsm9ds1_lib() {
+	$ARDUINO_CLI lib list | grep Arduino_LSM9DS1 || true
 }
-HAS_MKRWAN_LIB="$(has_mkrwan_lib)"
-if [ -z "$HAS_MKRWAN_LIB" ]; then
-    echo "Installing MKRWAN library..."
+HAS_LSM9DS1_LIB="$(has_lsm9ds1_lib)"
+if [ -z "$HAS_LSM9DS1_LIB" ]; then
+    echo "Installing LSM9DS1 library..."
     $ARDUINO_CLI lib update-index
-	$ARDUINO_CLI lib install MKRWAN@1.0.13	# MKRWAN library
-    echo "Installing MKRWAN library OK"
+	$ARDUINO_CLI lib install Arduino_LSM9DS1@1.0.0	#Inertial sensor library
+    echo "Installing LSM9DS1 library OK"
 fi
 
 # CLI v0.14 updates the name of this to --build-property
@@ -60,20 +60,17 @@ else
 	BUILD_PROPERTIES_FLAG=--build-properties
 fi
 
-INCLUDE="-I./src"
+INCLUDE="-I ./src"
 INCLUDE+=" -I./src/model-parameters"
-INCLUDE+=" -I./src/repl"
-INCLUDE+=" -I./src/ingestion-sdk-c/"
-INCLUDE+=" -I./src/ingestion-sdk-c/inc"
-INCLUDE+=" -I./src/ingestion-sdk-c/inc/signing"
-INCLUDE+=" -I./src/ingestion-sdk-platform/portenta"
-INCLUDE+=" -I./src/sensors"
-INCLUDE+=" -I./src/QCBOR/inc"
-INCLUDE+=" -I./src/QCBOR/src"
-INCLUDE+=" -I./src/mbedtls_hmac_sha256_sw/"
-INCLUDE+=" -I./src/edge-impulse-sdk/"
-INCLUDE+=" -I./src/drivers/Himax_HM01B0"
-INCLUDE+=" -I./src/drivers/Portenta_Camera"
+INCLUDE+=" -I ./src/repl"
+INCLUDE+=" -I ./src/ingestion-sdk-c/"
+INCLUDE+=" -I ./src/ingestion-sdk-c/inc"
+INCLUDE+=" -I ./src/ingestion-sdk-c/inc/signing"
+INCLUDE+=" -I ./src/ingestion-sdk-platform/nano-ble33"
+INCLUDE+=" -I ./src/sensors"
+INCLUDE+=" -I ./src/QCBOR/inc"
+INCLUDE+=" -I ./src/QCBOR/src"
+INCLUDE+=" -I ./src/mbedtls_hmac_sha256_sw/"
 
 FLAGS="-DARDUINOSTL_M_H"
 FLAGS+=" -DMBED_HEAP_STATS_ENABLED=1"
@@ -83,11 +80,7 @@ FLAGS+=" -g3"
 FLAGS+=" -DEI_SENSOR_AQ_STREAM=FILE"
 FLAGS+=" -DEIDSP_QUANTIZE_FILTERBANK=0"
 FLAGS+=" -DEI_CLASSIFIER_SLICES_PER_MODEL_WINDOW=3"
-FLAGS+=" -DEI_CLASSIFIER_ALLOCATION_STATIC"
-FLAGS+=" -DEI_DSP_IMAGE_BUFFER_STATIC_SIZE=128"
-FLAGS+=" -DEI_DEVICE_PORTENTA_DISABLE_MICROPHONE"
-#FLAGS+=" -mfpu=fpv4-sp-d16"
-FLAGS+=" -w"
+FLAGS+=" -mfpu=fpv4-sp-d16"
 
 if [ "$COMMAND" = "--build" ];
 then
