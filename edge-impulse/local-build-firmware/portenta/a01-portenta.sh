@@ -3,7 +3,7 @@
 
 echo "Just make sure the aurdino-build.sh file is in the same folder as your unzipped arduino edge impulse folder"
 
-./arduino-build-portenta.sh
+./arduino-build-portenta.sh --build
 
 echo "Copying the build/edge_impulse_inferencing_bootloader.bin to the downloadable folder eta-edge-serial-upload "
 cp build/edge_impulse_inferencing_bootloader.bin     ../portenta-edge-serial-upload/
