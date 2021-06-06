@@ -19,6 +19,7 @@ tasks:
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
               chmod +x arduino-build.sh                                                                                      &&
+              chmod +x arduino-build-portenta.sh                                                                             &&
               cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&            
                  
      
