@@ -1,3 +1,4 @@
+  
 image:
   file: .gitpod.dockerfile
 
@@ -11,14 +12,24 @@ tasks:
 
               echo "Starting .gitpod.yml installation" &>>  /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt     &&
  
-               
+                 
+     
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
+              git clone https://github.com/edgeimpulse/example-portenta-lorawan.git                                          &&
+              chmod +x a00-get-lora-example.sh                                                                               &&
+              chmod +x a01-portenta.sh                                                                                       &&
+              chmod +x arduino-build.sh                                                                                      &&
+              cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&            
+                 
+     
+              
               cd /home/linuxbrew/.linuxbrew                                                                                 &&
               curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
               python3 -m pip install mbed-cli  west  pyserial==3.4 inquirer==2.7.0                                          &&
-              ./arduino-build.sh                                                                                            &&
- 
- 
-                           
+              ./arduino-build.sh                                                                                            &&            
+                 
+                 
+                 
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/c++                                  &&
               git clone https://github.com/edgeimpulse/example-standalone-inferencing.git                                    &&
               chmod +x a01-cpp.sh                                                                                            &&
@@ -32,12 +43,6 @@ tasks:
               chmod +x arduino-build.sh                                                                                      &&
 
                            
-              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                             &&
-              git clone https://github.com/edgeimpulse/example-portenta-lorawan.git                                          &&
-              chmod +x a00-get-lora-example.sh                                                                               &&
-              chmod +x a01-portenta.sh                                                                                       &&
-              chmod +x arduino-build.sh                                                                                      &&
-              cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&
               
               
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/etaCompute                           &&
@@ -66,7 +71,6 @@ tasks:
               chmod +x a01-nordic-nrf5280.sh                                                                                &&
               chmod +x a02-nordic-nrf5340.sh                                                                                &&
               
-
               
               
                                          
@@ -80,7 +84,4 @@ tasks:
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                         &&                                                                                
 
-              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    
-              
-              
-     
+              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt   
