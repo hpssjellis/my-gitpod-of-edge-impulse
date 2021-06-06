@@ -41,7 +41,7 @@ tasks:
               
               cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/nano33bleSense                       &&
               chmod +x a01-nano.sh                                                                                           &&
-              chmod +x arduino-build.sh                                                                                      &&
+              chmod +x arduino-build-nano33.sh                                                                               &&
 
                            
               
