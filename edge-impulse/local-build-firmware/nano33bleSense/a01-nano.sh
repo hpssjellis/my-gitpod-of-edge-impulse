@@ -3,7 +3,7 @@
 
 echo "Just make sure the aurdino-build.sh file is in the same folder as your unzipped arduino edge impulse folder"
 
-./arduino-build-nano33.sh
+./arduino-build-nano33.sh --build
 
 
 echo "Copying the build/edge_impulse_inferencing_bootloader.bin to the downloadable folder eta-edge-serial-upload "
