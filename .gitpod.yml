@@ -83,6 +83,8 @@ tasks:
               
               
               
-              cd /workspace/my-gitpod-of-edge-impulse                                                                         &&                                                                                
+              cd /workspace/my-gitpod-of-edge-impulse                                                                         &&  
+              mkdir ARDUINO-LIBRARIES                                                                                         &&
+              ln -s /home/gitpod/Arduino/libraries ARDUINO-LIBRARIES                                                          &&
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt   
