@@ -9,7 +9,7 @@ if [ -z "$ARDUINO_CLI" ]; then
 fi
 DIRNAME="$(basename "$SCRIPTPATH")"
 EXPECTED_CLI_MAJOR=0
-EXPECTED_CLI_MINOR=13
+EXPECTED_CLI_MINOR=18
 
 if [ ! -x "$ARDUINO_CLI" ]; then
     echo "Cannot find 'arduino-cli' in your PATH. Install the Arduino CLI before you continue."
@@ -38,7 +38,7 @@ HAS_ARDUINO_CORE="$(has_arduino_core)"
 if [ -z "$HAS_ARDUINO_CORE" ]; then
     echo "Installing Arduino Mbed core..."
     $ARDUINO_CLI core update-index
-    $ARDUINO_CLI core install arduino:mbed@1.3.1
+    $ARDUINO_CLI core install arduino:mbed@2.1.0
     echo "Installing Arduino Mbed core OK"
 fi
 
@@ -49,7 +49,7 @@ HAS_MKRWAN_LIB="$(has_mkrwan_lib)"
 if [ -z "$HAS_MKRWAN_LIB" ]; then
     echo "Installing MKRWAN library..."
     $ARDUINO_CLI lib update-index
-	$ARDUINO_CLI lib install MKRWAN@1.0.13	# MKRWAN library
+	$ARDUINO_CLI lib install MKRWAN@1.1.0	# MKRWAN library
     echo "Installing MKRWAN library OK"
 fi
 
