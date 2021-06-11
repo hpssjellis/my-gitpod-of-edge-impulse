@@ -30,3 +30,19 @@ make --version
 arm-none-eabi-gcc --version
 
 ```
+
+
+
+
+
+Presently may have to run these commands if re-openning a gitpod
+
+```
+
+              cd /home/linuxbrew/.linuxbrew                                                                                 &&
+              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
+              python3 -m pip install mbed-cli  west  pyserial==3.4 inquirer==2.7.0                                          &&
+              ./arduino-build.sh                                                                                            && 
+```
+
+
