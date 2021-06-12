@@ -6,7 +6,11 @@ ports:
 - port: 8080
 
 tasks:
-- command:    mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
+- command:   echo "Starting this docker"             &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    &&
+             echo "Ending this docker implementation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt   
+
+
+- init:       mkdir /workspace/my-gitpod-of-edge-impulse/logs                                                                    &&
               touch /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt                                             &&
        
 
@@ -26,8 +30,7 @@ tasks:
               
               cd /home/linuxbrew/.linuxbrew                                                                                 &&
               curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                       &&
-              python3 -m pip install mbed-cli  west  pyserial==3.4 inquirer==2.7.0                                          &&
-              ./arduino-build.sh                                                                                            &&            
+              python3 -m pip install mbed-cli  west  pyserial==3.4 inquirer==2.7.0                                          &&         
                  
                  
                  
@@ -86,5 +89,9 @@ tasks:
               cd /workspace/my-gitpod-of-edge-impulse                                                                         &&  
               mkdir ARDUINO-LIBRARIES                                                                                         &&
               ln -s /home/gitpod/Arduino/libraries ARDUINO-LIBRARIES                                                          &&
+              mkdir ARDUINO-CORES                                                                                             &&
+              ln -s /home/gitpod/.arduino15/packages/arduino/hardware                                                         &&             
+              
+              
 
               echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt   
