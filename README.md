@@ -46,3 +46,16 @@ Presently may have to run these commands if re-openning a gitpod
 ```
 
 
+
+Note: Find folders with
+
+```
+find  / -type d -iname "project.images" -ls
+
+```
+
+Find files with
+
+```
+find  /  -iname "project.md" -ls
+```
