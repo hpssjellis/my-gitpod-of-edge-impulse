@@ -87,10 +87,10 @@ tasks:
               
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                         &&  
-              mkdir ARDUINO-LIBRARIES                                                                                         &&
-              ln -s /home/gitpod/Arduino/libraries ARDUINO-LIBRARIES                                                          &&
-              mkdir ARDUINO-CORES                                                                                             &&
-              ln -s /home/gitpod/.arduino15/packages/arduino/hardware   ARDUINO-CORES                                         &&             
+              mkdir z-ARDUINO-LIBRARIES                                                                                       &&
+              ln -s /home/gitpod/Arduino/libraries z-ARDUINO-LIBRARIES                                                        &&
+              mkdir z-ARDUINO-CORES                                                                                           &&
+              ln -s /home/gitpod/.arduino15/packages/arduino/hardware   z-ARDUINO-CORES                                       &&             
               
               
 
