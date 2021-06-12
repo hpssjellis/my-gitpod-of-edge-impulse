@@ -90,7 +90,7 @@ tasks:
               mkdir ARDUINO-LIBRARIES                                                                                         &&
               ln -s /home/gitpod/Arduino/libraries ARDUINO-LIBRARIES                                                          &&
               mkdir ARDUINO-CORES                                                                                             &&
-              ln -s /home/gitpod/.arduino15/packages/arduino/hardware                                                         &&             
+              ln -s /home/gitpod/.arduino15/packages/arduino/hardware   ARDUINO-CORES                                         &&             
               
               
 
