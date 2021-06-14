@@ -59,3 +59,8 @@ Find files with
 ```
 find  /  -iname "project.md" -ls
 ```
+
+
+Make file tutorial   https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/  
+
+
