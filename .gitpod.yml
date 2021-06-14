@@ -83,7 +83,7 @@ tasks:
               
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                         && 
-             ./workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh       && 
+             ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                           && 
               mkdir z-ARDUINO-LIBRARIES                                                                                       &&
               ln -s /home/gitpod/Arduino/libraries z-ARDUINO-LIBRARIES                                                        &&
               mkdir z-ARDUINO-CORES                                                                                           &&
