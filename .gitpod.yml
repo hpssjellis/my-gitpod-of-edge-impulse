@@ -100,7 +100,7 @@ tasks:
              cd /home/linuxbrew/.linuxbrew                                                                                     &&
              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&  
              cd /workspace/my-gitpod-of-edge-impulse                                                                           &&
-             ./workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh        && 
+             ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                            && 
              arduino-cli version                                                                                               &&
              west --version                                                                                                    &&
              mbed-cli --version                                                                                                &&
