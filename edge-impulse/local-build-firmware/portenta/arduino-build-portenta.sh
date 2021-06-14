@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 set -e
 
 PROJECT=firmware-arduino-portenta
