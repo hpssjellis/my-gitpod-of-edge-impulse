@@ -88,18 +88,13 @@ tasks:
               ln -s /home/gitpod/Arduino/libraries z-ARDUINO-LIBRARIES                                                        &&
               mkdir z-ARDUINO-CORES                                                                                           &&
               ln -s /home/gitpod/.arduino15/packages/arduino/hardware   z-ARDUINO-CORES                                       &&             
+             arduino-cli version                                                                                              &&
+             west --version                                                                                                   &&
+             mbed-cli --version                                                                                               &&
+             make --version                                                                                                   &&
+             arm-none-eabi-gcc --version                                                                                      &&
 
-
-              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt  
-- command:   echo "Starting this docker"             &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    &&
-             cd /home/linuxbrew/.linuxbrew                                                                                     &&
-             curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&  
-             cd /workspace/my-gitpod-of-edge-impulse                                                                           &&
-             ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                            && 
-             arduino-cli version                                                                                               &&
-             west --version                                                                                                    &&
-             mbed-cli --version                                                                                                &&
-             make --version                                                                                                    &&
-             arm-none-eabi-gcc --version                                                                                       &&
-             echo "Ending this docker implementation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt   
-
+             echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt
+             
+             
+             
