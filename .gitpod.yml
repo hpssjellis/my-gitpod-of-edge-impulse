@@ -18,6 +18,7 @@ tasks:
               git clone https://github.com/edgeimpulse/example-portenta-lorawan.git                                          &&
               chmod +x a00-get-lora-example.sh                                                                               &&
               chmod +x a01-portenta.sh                                                                                       &&
+              chmod +x a02-portenta-from-scratch.sh                                                                          &&
               chmod +x arduino-build.sh                                                                                      &&
               chmod +x arduino-build-portenta.sh                                                                             &&
               cp arduino-build.sh /home/linuxbrew/.linuxbrew/arduino-build.sh                                                &&            
