@@ -82,7 +82,8 @@ tasks:
               
               
               
-              cd /workspace/my-gitpod-of-edge-impulse                                                                         &&  
+              cd /workspace/my-gitpod-of-edge-impulse                                                                         && 
+             ./workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh       && 
               mkdir z-ARDUINO-LIBRARIES                                                                                       &&
               ln -s /home/gitpod/Arduino/libraries z-ARDUINO-LIBRARIES                                                        &&
               mkdir z-ARDUINO-CORES                                                                                           &&
@@ -97,10 +98,9 @@ tasks:
               
 - command:   echo "Starting this docker"             &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    &&
              cd /home/linuxbrew/.linuxbrew                                                                                     &&
-             curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&   
-             cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta                                &&
-             ./arduino-build-portenta.sh                                                                                       && 
+             curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&  
              cd /workspace/my-gitpod-of-edge-impulse                                                                           &&
+             ./workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh        && 
              arduino-cli version                                                                                               &&
              west --version                                                                                                    &&
              mbed-cli --version                                                                                                &&
