@@ -98,7 +98,7 @@ tasks:
              echo "Ending .gitpod.yml installation"  &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt
              
              
-- command:   echo "Starting this docker"             &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    &&
+  command:   echo "Starting this docker"             &>>   /workspace/my-gitpod-of-edge-impulse/logs/gitpod-install-log.txt    &&
              cd /home/linuxbrew/.linuxbrew                                                                                     &&
              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&  
              cd /workspace/my-gitpod-of-edge-impulse                                                                           && 
