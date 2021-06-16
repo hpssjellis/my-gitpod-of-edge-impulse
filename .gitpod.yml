@@ -84,7 +84,8 @@ tasks:
               
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                         && 
-              ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                          && 
+              ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                          &&
+              git clone https://github.com/sudar/Arduino-Makefile                                                             &&
               mkdir z-ARDUINO-LIBRARIES                                                                                       &&
               ln -s /home/gitpod/Arduino/libraries z-ARDUINO-LIBRARIES                                                        &&
               mkdir z-ARDUINO-CORES                                                                                           &&
