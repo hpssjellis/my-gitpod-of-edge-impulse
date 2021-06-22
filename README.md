@@ -64,3 +64,9 @@ find  /  -iname "project.md" -ls
 Make file tutorial   https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/  
 
 
+
+Spresense
+
+https://developer.sony.com/develop/spresense/docs/arduino_set_up_en.html
+
+https://github.com/sonydevworld/spresense-arduino-compatible
