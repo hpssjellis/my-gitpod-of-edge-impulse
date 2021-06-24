@@ -80,7 +80,14 @@ tasks:
               mv a01-mbed-build.sh   example-standalone-inferencing-mbed/                                                     &&
               cd example-standalone-inferencing-mbed                                                                          &&
               chmod +x a01-mbed-build.sh                                                                                      &&
-              
+       
+
+              cd /workspace/my-gitpod-of-edge-impulse/edge-impulse/local-build-firmware/sony-spresense                        &&
+              git clone https://github.com/edgeimpulse/example-standalone-inferencing-spresense.git                           &&
+              mv a01-spresense.sh   example-standalone-inferencing-spresense/                                                 &&
+              cd example-standalone-inferencing-spresense                                                                     &&
+              chmod +x a01-spresense.sh                                                                                       &&
+
               
               
               cd /workspace/my-gitpod-of-edge-impulse                                                                         && 
