@@ -7,10 +7,10 @@ files should look like
 
 example-standalone-inferencing-spresense/  
 |_ edge_impulse/  
-|  |_ edge-impulse-sdk/  
-|  |_ model-parameters/  
-|  |_ tflite-model/  
-|  |_ README.md  
+|    |_ edge-impulse-sdk/  
+|    |_ model-parameters/  
+|    |_ tflite-model/  
+|    |_ README.md  
 |_ mkspk/  
 |_ spresense-exported-sdk/  
 |_ stdlib/  
