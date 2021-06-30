@@ -111,6 +111,8 @@ tasks:
              curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh                           &&  
              cd /workspace/my-gitpod-of-edge-impulse                                                                           && 
              ./edge-impulse/local-build-firmware/portenta/arduino-build-portenta.sh                                            &&  
+             arduino-cli lib install portenta-pro-community-solutions                                                          && 
+             arduino-cli lib install Arduino_tensorflowlite                                                                    && 
              arduino-cli version                                                                                               &&
              west --version                                                                                                    &&
              mbed-cli --version                                                                                                &&
