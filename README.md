@@ -70,3 +70,15 @@ Spresense
 https://developer.sony.com/develop/spresense/docs/arduino_set_up_en.html
 
 https://github.com/sonydevworld/spresense-arduino-compatible
+
+
+Note: Other useful commands
+
+```
+arduino-cli lib examples RPC
+arduino-cli lib search Portenta
+arduino-cli lib install portenta-pro-community-solutions
+arduino-cli lib install Arduino_tensorflowlite
+
+
+```
