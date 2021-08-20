@@ -3,7 +3,7 @@ my gitpod of edge impulse
 
 
 
-# Note: I am only maintaining the Arduino section, specifically for the Portenta Pro Family of boards and shields
+## Note: I am only maintaining the Arduino section, specifically for the Portenta Pro Family of boards and shields
 
 The other sections work with varying levels of success.
 
@@ -11,7 +11,12 @@ Make this most uptodate Gitpod by clicking the follwoing link (Need a Github log
 ## https://gitpod.io/#github.com/hpssjellis/my-gitpod-of-edge-impulse
 
 
-.
+
+For fun I am going to try to include the openMV installation from https://github.com/openmv/openmv/blob/master/src/README.md  I hope it doesn't break what I already have working.
+
+
+
+The basic concept is that the folders in /edge-impulse/local-build-firmware/ will have specific folders for the different edge impulse builds. Inside those folders should be a bash file that can walk through a typical edge impulse example local build.
 
 .
 
